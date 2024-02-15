@@ -1,9 +1,5 @@
- 
-
 .view-one{
- 
   height: auto;
-   
   color: white;
   height: 100px;
   padding-top: 20px;
@@ -124,7 +120,6 @@ text-align: center;
   font-weight: bold;
   font-size: 34px;
   color: red;
-  
 }
  
 
@@ -248,5 +243,23 @@ input[type=file]::file-selector-button:hover {
       font-size: 30px;
       color: rgb(241, 6, 57);
    }
+   .logo{
+    margin: auto;
+    font-weight: bold;
+    color: red;
+  }
+  .app-header {
+    box-sizing: border-box;
+     
+    text-align: center;
+}
+.btn-login{
+  border: 1px solid gray;
+    height: 36px;
+    background-color: white;
+    color: red;
+    width: 100px;
+    font-weight: bold;
+}
 }
  
