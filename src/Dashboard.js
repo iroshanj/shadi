@@ -17,7 +17,7 @@ curUserGen = curUserGen.gender;
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:5000/user');
+      const response = await fetch('https://parichay-sammelan-93745ade9b69.herokuapp.com/user');
       var jsonData = await response.json();
       jsonData = jsonData.filter(function(i){
         return i.gender != curUserGen;

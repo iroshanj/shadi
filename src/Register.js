@@ -83,7 +83,7 @@ function Register() {
       };
  
       e.preventDefault();
-      const response = await fetch("http://localhost:5000/user", {
+      const response = await fetch("https://parichay-sammelan-93745ade9b69.herokuapp.com/user", {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -111,7 +111,7 @@ function Register() {
     const formData = new FormData();
     formData.append("photo", file);
 
-    const response = await fetch("http://localhost:5000/upload", {
+    const response = await fetch("https://parichay-sammelan-93745ade9b69.herokuapp.com/upload", {
       method: "POST",
       body: formData,
     });
