@@ -33,7 +33,7 @@ function Register() {
       alert("कृपया अपना फोटो चुनें और अपलोड पर क्लिक करें");
     } else if (gender == 0) {
       alert("कृपया लड़का या लड़की चुनें");
-    } else if (name==null) {
+    } else if (name == null) {
       alert("पहला नाम और उपनाम दर्ज करें");
     } else if (dob == null) {
       alert("जन्म तारीख दर्ज करें");
@@ -49,7 +49,7 @@ function Register() {
       alert("Enter your job location");
     } else if (income < 10000) {
       alert("अपना कार्य स्थान दर्ज करें");
-    } else if (parentName==null) {
+    } else if (parentName == null) {
       alert("माता/पिता का पहला नाम और अंतिम नाम दर्ज करें");
     } else if (!regMob.test(parentContact)) {
       alert("अपने माता/पिता का मोबाइल नंबर दर्ज करें");
@@ -61,8 +61,8 @@ function Register() {
       alert("अपना स्थायी पता दर्ज करें");
     } else {
       const dataObj = {
-        paystatus:0,
-        transid:'id',
+        paystatus: 0,
+        transid: "id",
         name: name,
         father: parentName,
         fathejob: "Businessman",
@@ -81,7 +81,7 @@ function Register() {
         cast: cast,
         url: url,
       };
- 
+
       e.preventDefault();
       const response = await fetch("https://parichay-sammelan-93745ade9b69.herokuapp.com/user", {
         method: "POST",
@@ -91,7 +91,7 @@ function Register() {
         },
       });
       const result = await response.json();
-       if (result.status === 200) {
+      if (result.status === 200) {
         navigate("/success");
       } else {
       }
@@ -103,7 +103,7 @@ function Register() {
   };
   const handleFile = function (e) {
     setFile(e.target.files[0]);
-     setShowUpload(true);
+    setShowUpload(true);
   };
   const onImageUpload = async function (e) {
     setClickedUpload(true);
@@ -160,6 +160,7 @@ function Register() {
 
   return (
     <>
+    
       <div className="top-bar-color"></div>
       <div className="space"></div>
       <div className="app-header">
@@ -194,8 +195,7 @@ function Register() {
           <div class="row">
             <div class="col-90">
               <select value={gender} onChange={handleDataGender} id="drop-dwn">
-                <option>लड़का/लड़की
-</option>
+                <option>लड़का/लड़की</option>
                 <option value="1">लड़का</option>
                 <option value="2">लड़की</option>
               </select>
@@ -359,11 +359,11 @@ function Register() {
           <div class="row">
             <div class="col-90">
               <button className="btn-save" onClick={onSave}>
-              आवेदन जमा करें
-
+                आवेदन जमा करें
               </button>
             </div>
           </div>
+          
         </div>
       </div>
     </>
