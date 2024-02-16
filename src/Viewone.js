@@ -1,12 +1,17 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+ 
 
 function Viewone() {
   return (
     <>
       <div className="top-bar-color"></div>
       <div className="space"></div>
+      <div className="mah">श्री महावीराय नमः</div>
+      <div className="space"></div>
+
       <div className="app-header">
+        
         <div className="logo">जैन युवक-युवती परिचय पत्रिका </div>
         <div> <Link to="/register">
             <button className="btn-create">आवेदन भरें</button>
@@ -19,7 +24,6 @@ function Viewone() {
       <div className="space"></div>
       <div className="bap">
         <div className="space"></div>
-
         <div className="view-three">
           <p className="namaste">आत्मीय स्नेही स्वजन, सादर जय जिनेंद्र एवं शुद्धात्म वंदन!</p>
           <p>

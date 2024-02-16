@@ -235,18 +235,24 @@ input[type=file]::file-selector-button:hover {
   background: #0d45a5;
 }
 
-
+.mah{
+  text-align: center;
+  color:red;
+}
 
 
 @media only screen and (max-width: 600px) {
+  .large-space {
+    height: 10px; 
+}
   .btn-create {
-    border: 1px solid gray;
+    border: 1px solid white;
     height: 36px;
-    background-color: white;
-    color: red;
+    background-color: red;
+    color: white;
     width: auto;
     font-weight: bold;
-    margin: 4px;
+    margin: 5px
 }
   .btn-biodata{
     border: 1px solid white;
@@ -294,15 +300,6 @@ input[type=file]::file-selector-button:hover {
   width: 100%;
   margin: auto;
 }
-.btn-create {
-  border: 0px solid gray;
-  height: 36px;
-  background-color: white;
-  color: white;
-  width: auto;
-  font-weight: bold;
-  margin-right: 25px;
-  background-color: red;
-}
+
 }
  
