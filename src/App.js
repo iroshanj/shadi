@@ -5,19 +5,35 @@ import Viewone from "./Viewone";
 import Register from "./Register";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
-import Payment from "./Payment";
-import Success from "./Success";
+ import Success from "./Success";
+import Profile from "./Profile";
+import Update from "./Update";
+import PrivateRoute from './PrivateRoute';
+import ProfileUpdateSuccess from "./ProfileUpdateSuccess";
 
 function App() {
+  const isAuthenticated = true; 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Viewone />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/payment" element={<Payment />} />
         <Route path="/success" element={<Success />} />
+
+        <Route path="dashboard" element={<PrivateRoute Component={Dashboard} />} />
+         
+        <Route path="myprofile" element={<PrivateRoute Component={Profile} />} />
+        <Route path="update" element={<PrivateRoute Component={Update} />} />
+
+        <Route path="update-success" element={<PrivateRoute Component={ProfileUpdateSuccess} />} />
+
+
+
+        
+        
+        
+        
       </Routes>
     </BrowserRouter>
   );

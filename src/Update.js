@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 import rooturl from "./config.js";
 
 //Deploy and Host a Fullstack MERN Application Tutorial In Heroku and Netlify
-function Register() {
-  
+function Update() {
   const navigate = useNavigate();
 
   const [showUpload, setShowUpload] = useState(false);
@@ -19,7 +19,7 @@ function Register() {
   const [education, setEducation] = useState(null);
   const [profession, setProfession] = useState(null);
   const [jobLocation, setJobLocation] = useState(null);
-  const [parentName, setParentName] = useState(null);
+  const [parentName, setParentName] = useState("");
   const [parentContact, setParentContact] = useState(null);
   const [address, setAddress] = useState(null);
   const [password, setPassword] = useState("");
@@ -30,49 +30,44 @@ function Register() {
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
 
+  var curUserGen = localStorage.getItem("curUser");
+  curUserGen = JSON.parse(curUserGen);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${rooturl}/user`);
+      var jsonData = await response.json();
+      jsonData = jsonData.filter(function (i) {
+        return i._id == curUserGen._id;
+      });
+      console.log("From Update compo");
+      console.log(jsonData);
+      //setCards(jsonData);
+      setTob(jsonData[0].tob);
+      setDob(jsonData[0].dob);
+      setPob(jsonData[0].pob);
+      setMobile(jsonData[0].mobile);
+      setEducation(jsonData[0].education);
+      setProfession(jsonData[0].profession);
+      setParentContact(jsonData[0].contact);
+      setJobLocation(jsonData[0].oficelocation);
+      setIncome(jsonData[0].income);
+      setCast(jsonData[0].cast);
+      setAddress(jsonData[0].address);
+      setEmail(jsonData[0].email);
+      setUrl(jsonData[0].url);
+    };
+    fetchData();
+  }, []);
+
   const onSave = async function (e) {
-    
-    //var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
-   // var regMob = /^\d{10}$/;
     var reMail = /\S+@\S+\.\S+/;
 
     if (clickedUpload == false) {
       alert("कृपया अपना फोटो चुनें और अपलोड पर क्लिक करें");
-    } else if (gender == 0) {
-      alert("कृपया लड़का या लड़की चुनें");
-    } else if (name == null) {
-      alert("प्रत्याशी का नाम दर्ज करें");
-    } else if (dob == null) {
-      alert("जन्म तिथि दर्ज करें");
-    } else if (tob == null) {
-      alert("जन्म का समय दर्ज करें");
-    }else if (pob == null) {
-      alert("जन्म स्थान दर्ज करें");
-    }
-    else if (mobile==null) {
-      alert("दस अंकों का मोबाइल नंबर दर्ज करें");
-    } else if (!reMail.test(email)) {
-      alert("वैध ईमेल आईडी दर्ज करें");
-    } else if (education == null) {
-      alert("अपनी शिक्षा दर्ज करें");
-    } else if (profession == null) {
-      alert("अपना पेशा दर्ज करें");
-    } else if (jobLocation == null) {
-      alert("नौकरी/व्यवसाय का पता दर्ज करें");
-    } else if ( typeof income =='object' || parseInt(income)<0) {
-      alert("मासिक आय दर्ज करे ");
-    } else if (parentName == null) {
-      alert("माता/पिता का नाम दर्ज करें");
-    } else if (parentContact==null) {
-      alert("अपने माता/पिता का मोबाइल नंबर दर्ज करें");
-    } else if (cast == null) {
-      alert("अपनी जाति का विवरण दर्ज करें");
-    } else if (password.length < 8) {
-      alert("आपका पासवर्ड कम से कम 8 अक्षर लंबा होना चाहिए");
-    } else if (address == null) {
-      alert("अपना स्थायी पता दर्ज करें");
     } else {
       const dataObj = {
+        id: curUserGen._id,
         paystatus: 0,
         transid: "id",
         name: name,
@@ -95,9 +90,10 @@ function Register() {
         cast: cast,
         url: url,
       };
+      console.log(dataObj);
 
       e.preventDefault();
-      const response = await fetch(`${rooturl}/user`, {
+      const response = await fetch(`${rooturl}/update`, {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -105,8 +101,9 @@ function Register() {
         },
       });
       const result = await response.json();
-      if (result.status === 200) {
-        navigate("/success");
+      if (typeof result !== null) {
+        localStorage.clear();
+        navigate("/update-success");
       } else {
       }
     }
@@ -163,9 +160,9 @@ function Register() {
       setIncome(e.target.value);
     } else if (e.target.name == "cast") {
       setCast(e.target.value);
-    }else if (e.target.name == "tob") {
+    } else if (e.target.name == "tob") {
       setTob(e.target.value);
-    }else if (e.target.name == "pob") {
+    } else if (e.target.name == "pob") {
       setPob(e.target.value);
     }
   };
@@ -178,13 +175,12 @@ function Register() {
 
   return (
     <>
-    
       <div className="top-bar-color"></div>
       <div className="space"></div>
       <div className="app-header">
-        <div className="mah">आप अपनी जानकारी हिंदी या अंग्रेजी में से किसी एक भाषा में दर्ज कर सकते हैं। कृपया आवेदन जमा करने से पहले अपनी जानकारी जाँच लें</div>
+      <div className="mah">कृपया आपकी जानकारी सही से दर्ज करे ताकि अन्य प्रत्याशी आपसे आसानी से संपर्क कर सके। </div>
         <div className=" ">
-          <Link to="/">
+          <Link to="/myprofile">
             <button className="btn-create">रद्द करें</button>
           </Link>
         </div>
@@ -210,34 +206,15 @@ function Register() {
               </div>
             </div>
           )}
-          <div class="row">
-            <div class="col-90">
-              <select value={gender} onChange={handleDataGender} id="drop-dwn">
-                <option>लड़का/लड़की</option>
-                <option value="1">लड़का</option>
-                <option value="2">लड़की</option>
-              </select>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-90">
-              <input
-                type="text"
-                value={name}
-                name="name"
-                placeholder="प्रत्याशी का नाम"
-                onChange={handleData}
-              ></input>
-            </div>
-          </div>
           <div class="row">
             <div class="col-90">
               <input
                 type="text"
                 value={dob}
                 name="dob"
-                placeholder="जन्म तिथि"
+                placeholder="जन्म दिनांक
+                "
                 onChange={handleData}
               ></input>
             </div>
@@ -281,17 +258,6 @@ function Register() {
           <div class="row">
             <div class="col-90">
               <input
-                type="email"
-                value={email}
-                name="email"
-                placeholder="ईमेल"
-                onChange={handleData}
-              ></input>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-90">
-              <input
                 type="text"
                 value={education}
                 name="education"
@@ -317,19 +283,7 @@ function Register() {
                 type="text"
                 value={jobLocation}
                 name="oficelocation"
-                placeholder="नौकरी/व्यवसाय का पता
-                "
-                onChange={handleData}
-              ></input>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-90">
-              <input
-                type="number"
-                value={income}
-                name="income"
-                placeholder="मासिक आय
+                placeholder="नौकरी का पता
                 "
                 onChange={handleData}
               ></input>
@@ -339,13 +293,15 @@ function Register() {
             <div class="col-90">
               <input
                 type="text"
-                value={parentName}
-                name="father"
-                placeholder="माता/पिता का नाम"
+                value={income}
+                name="income"
+                placeholder="मासिक आय
+                "
                 onChange={handleData}
               ></input>
             </div>
           </div>
+
           <div class="row">
             <div class="col-90">
               <input
@@ -365,18 +321,6 @@ function Register() {
                 value={cast}
                 name="cast"
                 placeholder="जाति विवरण"
-                onChange={handleData}
-              ></input>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-90">
-              <input
-                type="password"
-                value={password}
-                name="password"
-                placeholder="पासवर्ड चुनें
-                "
                 onChange={handleData}
               ></input>
             </div>
@@ -402,11 +346,10 @@ function Register() {
               </button>
             </div>
           </div>
-          
         </div>
       </div>
     </>
   );
 }
 
-export default Register;
+export default Update;

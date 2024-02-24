@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 
-function Success() {
+function ProfileUpdateSuccess() {
   const navigate = useNavigate();
 
   const onSave = async function (e) {
@@ -26,7 +26,7 @@ function Success() {
         <div class="container">
         <div class="row">
             <div class="col-90">
-              <p>आपका पंजीकरण सफलतापूर्वक पूरा हो गया है. प्रत्याशियों के बायोडाटा देखने के लिए लॉगिन करे </p>
+              <p>प्रोफाइल जानकारी में  सफलतापूर्वक सुधार हो गया है। सुधारित जानकारी देखने के लिए लॉगिन करे. </p>
             </div>
           </div>
           <div class="row">
@@ -40,4 +40,4 @@ function Success() {
   );
 }
 
-export default Success;
+export default ProfileUpdateSuccess;
