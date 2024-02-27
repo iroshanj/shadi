@@ -1,3 +1,3 @@
- const rooturl = 'https://pratyashiapp-1e9a02d239af.herokuapp.com'
-
+                     
+const rooturl = 'https://yogsanyog-503b39324011.herokuapp.com'
  export default rooturl;

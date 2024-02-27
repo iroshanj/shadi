@@ -152,7 +152,7 @@ console.log('PROFILE-STO');
                   <button className="btn-save" onClick={onUpdate}>अपनी जानकारी में सुधार करे </button>
                 </div>
                 <div className="bio-row">
-                  <button className="btn-danger" onClick={onDelete}>अपनी प्रोफाइल इस वेबसाइट से हमेशा के लिए हटा दे </button>
+                  <button className="btn-danger" onClick={onDelete}>अपनी प्रोफाइल हमेशा के लिए हटा दे </button>
                 </div>
                 
               </div>
