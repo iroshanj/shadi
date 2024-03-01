@@ -1,3 +1,3 @@
                      
-const rooturl = 'https://yogsanyog-503b39324011.herokuapp.com'
+const rooturl = 'https://biodatarestapinode-2.onrender.com'
  export default rooturl;
