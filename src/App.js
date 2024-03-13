@@ -10,6 +10,7 @@ import Profile from "./Profile";
 import Update from "./Update";
 import PrivateRoute from './PrivateRoute';
 import ProfileUpdateSuccess from "./ProfileUpdateSuccess";
+import Phonepe from "./Phonepe";
 
 function App() {
   const isAuthenticated = true; 
@@ -25,15 +26,8 @@ function App() {
          
         <Route path="myprofile" element={<PrivateRoute Component={Profile} />} />
         <Route path="update" element={<PrivateRoute Component={Update} />} />
-
+        <Route path="phonepe" element={<PrivateRoute Component={Phonepe} />} />
         <Route path="update-success" element={<PrivateRoute Component={ProfileUpdateSuccess} />} />
-
-
-
-        
-        
-        
-        
       </Routes>
     </BrowserRouter>
   );

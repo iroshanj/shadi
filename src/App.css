@@ -4,6 +4,15 @@
   height: 100px;
   padding-top: 20px;
 }
+.mobile-num{
+  color: #6739B7;
+    font-size: 50px;
+    font-weight: bold;
+}
+.phonepe-logo{
+  height: 100px;
+  width: 200px;
+}
 .view-three{
   padding: 10px;
   margin: auto;

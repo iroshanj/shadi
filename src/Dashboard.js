@@ -39,7 +39,8 @@ function Dashboard() {
   };
 
   const handlePayment = function () {
-    setPayStatus(1);
+    //setPayStatus(1);
+    navigate("/phonepe");
   };
 
   const onMyProfile = function () {
@@ -58,9 +59,9 @@ function Dashboard() {
       <div className="app-header">
         <div className="logo"> </div>
         <div className=" ">
-          <button className="btn-create" onClick={onMyProfile}>
+          {paystatus &&(<button className="btn-create" onClick={onMyProfile}>
             अपनी प्रोफाइल देखें
-          </button>
+          </button>)}
         </div>
         <div className=" ">
           <button className="btn-create" onClick={onLogout}>

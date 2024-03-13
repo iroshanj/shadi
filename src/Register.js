@@ -119,21 +119,32 @@ function Register() {
     setFile(e.target.files[0]);
     setShowUpload(true);
   };
-  const onImageUpload = async function (e) {
+  /*const onImageUpload = async function (e) {
     setClickedUpload(true);
     setShowFileUpload(false);
     const formData = new FormData();
     formData.append("photo", file);
-
     const response = await fetch(`${rooturl}/upload`, {
       method: "POST",
       body: formData,
     });
-
     const result = await response.json();
-
     setUrl(result.url);
     console.log('GGGG',result.url);
+  };*/
+  const onImageUpload = async function (e) {
+    setClickedUpload(true);
+    setShowFileUpload(false);
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch(`https://shagunpal.online/upload.php`, {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
+    let updatedurl = `https://shagunpal.online/uploads/${result.url}`
+    setUrl(updatedurl);
+    console.log('GGGG',result);
   };
   const handleData = function (e) {
     if (e.target.name == "name") {
