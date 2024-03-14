@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import rooturl from "./config.js";
 function Dashboard() {
-  var curUserGen = localStorage.getItem("curUser");
-  curUserGen = JSON.parse(curUserGen);
-  curUserGen = curUserGen.gender;
+  var curUserFromLocal;
+  var curUserGen;
+  var curUserPayStatus;
+  curUserFromLocal = localStorage.getItem("curUser");
+  curUserFromLocal = JSON.parse(curUserFromLocal);
+  curUserGen = curUserFromLocal.gender;
+  curUserPayStatus = curUserFromLocal.paystatus;
   const navigate = useNavigate();
   const [allCards, setCards] = useState([]);
   const [cardToShow, setCardToShow] = useState(0);
-  const [paystatus, setPayStatus] = useState(curUserGen.paystatus);
+  const [paystatus, setPayStatus] = useState(curUserPayStatus);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,27 +59,33 @@ function Dashboard() {
   return (
     <>
       <div className="top-bar-color"></div>
+
       <div className="space"></div>
+
       <div className="app-header">
         <div className="logo"> </div>
-        <div className=" ">
-          {paystatus &&(<button className="btn-create" onClick={onMyProfile}>
+
+        {paystatus?(<div className=" ">
+          <button className="btn-create" onClick={onMyProfile}>
             अपनी प्रोफाइल देखें
-          </button>)}
-        </div>
+          </button>
+        </div>):null}
+
         <div className=" ">
           <button className="btn-create" onClick={onLogout}>
             लॉग आउट
           </button>
         </div>
       </div>
+
       <div className="space"></div>
+
       <div className="dash">
-        {!paystatus && (
+        {!paystatus ?(
           <div className="bio-center">
             <p>
               <strong>
-                प्रत्याशी परिचय पत्रिका देखने के लिए कृपया भुगतान करें
+              अपना बायोडाटा प्रकाशित करने के लिए भुगतान करें
               </strong>
             </p>
             <div className="space"></div>
@@ -87,22 +97,25 @@ function Dashboard() {
               </button>
             </p>
           </div>
-        )}
+        ):null}
 
-        {paystatus && allCards.length == 0 && (
-          <div className="bio-center">
-            <p>
-              <strong>
-                अभी सिस्टम में कोई भी बायोडाटा पंजीकृत नहीं है। जब भी नए पंजीकरण
-                होंगे, वे यहां उपलब्ध होंगे। कृपया नया पंजीकरण होने तक प्रतीक्षा
-                करें।
-              </strong>
-            </p>
+        {paystatus && (allCards.length == 0)? (
+          <div className="loader-bap">
+             
             <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+            <div className="space"></div>
+             <div className="loader"></div>
+            
           </div>
-        )}
+        ):null}
 
-        {paystatus && allCards.length > 0 && (
+        {paystatus && (allCards.length > 0) ? (
           <div className="bio">
             <div className="space"></div>
             <div className="space"></div>
@@ -176,7 +189,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-        )}
+        ):null}
       </div>
     </>
   );

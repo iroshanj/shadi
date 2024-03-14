@@ -20,9 +20,11 @@ function App() {
         <Route path="/" element={<Viewone />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/success" element={<Success />} />
+       
 
         <Route path="dashboard" element={<PrivateRoute Component={Dashboard} />} />
+        <Route path="success" element={<PrivateRoute Component={Success} />} />
+         
          
         <Route path="myprofile" element={<PrivateRoute Component={Profile} />} />
         <Route path="update" element={<PrivateRoute Component={Update} />} />

@@ -189,7 +189,7 @@ function Update() {
       <div className="top-bar-color"></div>
       <div className="space"></div>
       <div className="app-header">
-      <div className="mah">कृपया आपकी जानकारी सही से दर्ज करे ताकि अन्य प्रत्याशी आपसे आसानी से संपर्क कर सके। </div>
+      <div className="mah">जानकारी सही से दर्ज करे ताकि अन्य प्रत्याशी आपसे संपर्क कर सके। </div>
         <div className=" ">
           <Link to="/myprofile">
             <button className="btn-create">रद्द करें</button>

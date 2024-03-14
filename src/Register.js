@@ -194,7 +194,7 @@ function Register() {
       <div className="top-bar-color"></div>
       <div className="space"></div>
       <div className="app-header">
-        <div className="mah">जानकारी हिंदी या अंग्रेजी भाषा में दर्ज कर सकते हैं। कृपया आवेदन जमा करने से पहले अपनी जानकारी जाँच लें</div>
+        <div className="mah">जानकारी हिंदी भाषा में दर्ज कर सकते हैं|</div>
         <div className=" ">
           <Link to="/">
             <button className="btn-create">रद्द करें</button>
