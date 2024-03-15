@@ -75,7 +75,7 @@ function Login() {
           <div class="row">
             <div class="col-90">
               <input
-                type="text"
+                type="password"
                 value={password}
                 name="password"
                 placeholder="पासवर्ड"
