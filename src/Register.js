@@ -5,7 +5,6 @@ import rooturl from "./config.js";
 
 //Deploy and Host a Fullstack MERN Application Tutorial In Heroku and Netlify
 function Register() {
-  
   const navigate = useNavigate();
 
   const [showUpload, setShowUpload] = useState(false);
@@ -29,11 +28,14 @@ function Register() {
   const [url, setUrl] = useState("");
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
+  const [height, setHeight] = useState(null);
+    const [marstatus, setmarstatus] = useState(null);
+   const [expected, setExpected] = useState(null);
+
 
   const onSave = async function (e) {
-    
     //var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
-   // var regMob = /^\d{10}$/;
+    // var regMob = /^\d{10}$/;
     var reMail = /\S+@\S+\.\S+/;
 
     if (clickedUpload == false) {
@@ -46,10 +48,13 @@ function Register() {
       alert("जन्म तिथि दर्ज करें");
     } else if (tob == null) {
       alert("जन्म का समय दर्ज करें");
-    }else if (pob == null) {
+    } else if (pob == null) {
       alert("जन्म स्थान दर्ज करें");
-    }
-    else if (mobile==null) {
+    } else if (height == null) {
+      alert("ऊंचाई दर्ज करें");
+    }  else if (marstatus == null) {
+      alert("वैवाहिक स्थिति दर्ज करें");
+    }else if (mobile == null) {
       alert("दस अंकों का मोबाइल नंबर दर्ज करें");
     } else if (!reMail.test(email)) {
       alert("वैध ईमेल आईडी दर्ज करें");
@@ -59,17 +64,19 @@ function Register() {
       alert("अपना पेशा दर्ज करें");
     } else if (jobLocation == null) {
       alert("नौकरी/व्यवसाय का पता दर्ज करें");
-    } else if ( typeof income =='object' || parseInt(income)<0) {
+    } else if (typeof income == "object" || parseInt(income) < 0) {
       alert("मासिक आय दर्ज करे ");
     } else if (parentName == null) {
       alert("माता/पिता का नाम दर्ज करें");
-    } else if (parentContact==null) {
+    } else if (parentContact == null) {
       alert("अपने माता/पिता का मोबाइल नंबर दर्ज करें");
     } else if (cast == null) {
       alert("अपनी जाति का विवरण दर्ज करें");
     } else if (password.length < 8) {
       alert("आपका पासवर्ड कम से कम 8 अक्षर लंबा होना चाहिए");
-    } else if (address == null) {
+    } else if (expected == null) {
+      alert("अपेक्षित जीवन साथी के बारे में दर्ज करें");
+    }else if (address == null) {
       alert("अपना स्थायी पता दर्ज करें");
     } else {
       const dataObj = {
@@ -94,6 +101,12 @@ function Register() {
         income: income,
         cast: cast,
         url: url,
+        height:height,
+        age:100,
+        blood:"NA",
+        marstatus:marstatus,
+        hobbies:"NA",
+        expected:expected
       };
 
       e.preventDefault();
@@ -142,9 +155,9 @@ function Register() {
       body: formData,
     });
     const result = await response.json();
-    let updatedurl = `https://shagunpal.online/uploads/${result.url}`
+    let updatedurl = `https://shagunpal.online/uploads/${result.url}`;
     setUrl(updatedurl);
-    console.log('GGGG',result);
+    console.log("GGGG", result);
   };
   const handleData = function (e) {
     if (e.target.name == "name") {
@@ -175,10 +188,16 @@ function Register() {
       setIncome(e.target.value);
     } else if (e.target.name == "cast") {
       setCast(e.target.value);
-    }else if (e.target.name == "tob") {
+    } else if (e.target.name == "tob") {
       setTob(e.target.value);
-    }else if (e.target.name == "pob") {
+    } else if (e.target.name == "pob") {
       setPob(e.target.value);
+    }else if (e.target.name == "height") {
+      setHeight(e.target.value);
+    }  else if (e.target.name == "marstatus") {
+      setmarstatus(e.target.value);
+    } else if (e.target.name == "expected") {
+      setExpected(e.target.value);
     }
   };
 
@@ -190,7 +209,6 @@ function Register() {
 
   return (
     <>
-    
       <div className="top-bar-color"></div>
       <div className="space"></div>
       <div className="app-header">
@@ -278,6 +296,33 @@ function Register() {
               ></input>
             </div>
           </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={height}
+                name="height"
+                placeholder="ऊंचाई 
+                "
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={marstatus}
+                name="marstatus"
+                placeholder="अविवाहित/तलाकशुदा/विधवा
+                "
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          
           <div class="row">
             <div class="col-90">
               <input
@@ -393,14 +438,26 @@ function Register() {
               ></input>
             </div>
           </div>
-
+          <div class="row">
+            <div class="col-90">
+              <textarea
+                name="expected"
+                value={expected}
+                cols="30"
+                rows="6"
+                placeholder="आप किस तरह का जीवनसाथी ढूंढ रहे हैं
+                "
+                onChange={handleData}
+              ></textarea>
+            </div>
+          </div>
           <div class="row">
             <div class="col-90">
               <textarea
                 name="address"
                 value={address}
                 cols="30"
-                rows="10"
+                rows="6"
                 placeholder="स्थायी पता
                 "
                 onChange={handleData}
@@ -414,7 +471,6 @@ function Register() {
               </button>
             </div>
           </div>
-          
         </div>
       </div>
     </>

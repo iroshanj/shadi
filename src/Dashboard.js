@@ -29,14 +29,14 @@ function Dashboard() {
 
   const Next = function () {
     if (cardToShow == allCards.length - 1) {
-      setCardToShow(cardToShow);
+      setCardToShow(0);
     } else {
       setCardToShow(cardToShow + 1);
     }
   };
   const Prev = function () {
     if (cardToShow == 0) {
-      setCardToShow(0);
+      setCardToShow(allCards.length - 1);
     } else {
       setCardToShow(cardToShow - 1);
     }
@@ -144,6 +144,15 @@ function Dashboard() {
               <div className="space"></div>
 
               <div className="name-holder">
+              <div className="bio-row">
+                  <div className="heading">वैवाहिक स्थिति</div>
+                  <div className="data">{allCards[cardToShow]?.marstatus}</div>
+                </div>
+              
+                <div className="bio-row">
+                  <div className="heading">ऊंचाई</div>
+                  <div className="data">{allCards[cardToShow]?.height}</div>
+                </div>
                 <div className="bio-row">
                   <div className="heading">जन्म तिथि</div>
                   <div className="data">{allCards[cardToShow]?.dob}</div>
@@ -181,6 +190,10 @@ function Dashboard() {
                 <div className="bio-row">
                   <div className="heading">जाति विवरण</div>
                   <div className="data">{allCards[cardToShow]?.cast}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">अपेक्षाएं</div>
+                  <div className="data">{allCards[cardToShow]?.expected}</div>
                 </div>
                 <div className="bio-row">
                   <div className="heading">स्थायी पता</div>

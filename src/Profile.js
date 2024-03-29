@@ -105,6 +105,14 @@ console.log('PROFILE-STO');
                   <div className="heading">जन्म स्थान</div>
                   <div className="data">{curUserGen.pob}</div>
                 </div>
+                <div className="bio-row">
+                  <div className="heading">ऊंचाई</div>
+                  <div className="data">{curUserGen.height}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">वैवाहिक स्थिति</div>
+                  <div className="data">{curUserGen.marstatus}</div>
+                </div>
                  
                 <div className="bio-row">
                   <div className="heading">पेशा</div>
@@ -143,6 +151,10 @@ console.log('PROFILE-STO');
                 <div className="bio-row">
                   <div className="heading">जाति विवरण</div>
                   <div className="data">{curUserGen.cast}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">अपेक्षित</div>
+                  <div className="data">{curUserGen.expected}</div>
                 </div>
                 <div className="bio-row">
                   <div className="heading">स्थायी पता</div>

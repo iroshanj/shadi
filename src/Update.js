@@ -29,7 +29,9 @@ function Update() {
   const [url, setUrl] = useState("");
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
-
+  const [height, setHeight] = useState(null);
+  const [marstatus, setmarstatus] = useState(null);
+  const [expected, setExpected] = useState(null);
   var curUserGen = localStorage.getItem("curUser");
   curUserGen = JSON.parse(curUserGen);
 
@@ -46,6 +48,8 @@ function Update() {
       setTob(jsonData[0].tob);
       setDob(jsonData[0].dob);
       setPob(jsonData[0].pob);
+      setHeight(jsonData[0].height);
+      setmarstatus(jsonData[0].marstatus);
       setMobile(jsonData[0].mobile);
       setEducation(jsonData[0].education);
       setProfession(jsonData[0].profession);
@@ -53,6 +57,7 @@ function Update() {
       setJobLocation(jsonData[0].oficelocation);
       setIncome(jsonData[0].income);
       setCast(jsonData[0].cast);
+      setExpected(jsonData[0].expected);
       setAddress(jsonData[0].address);
       setEmail(jsonData[0].email);
       setUrl(jsonData[0].url);
@@ -75,6 +80,8 @@ function Update() {
         fathejob: "Businessman",
         dob: dob,
         pob: pob,
+        marstatus:marstatus,
+        height:height,
         tob: tob,
         mobile: mobile,
         gender: gender,
@@ -85,6 +92,7 @@ function Update() {
         contact: parentContact,
         oficelocation: jobLocation,
         address: address,
+        expected:expected,
         role: 1,
         income: income,
         cast: cast,
@@ -175,6 +183,12 @@ function Update() {
       setTob(e.target.value);
     } else if (e.target.name == "pob") {
       setPob(e.target.value);
+    }else if (e.target.name == "height") {
+      setHeight(e.target.value);
+    }else if (e.target.name == "marstatus") {
+      setmarstatus(e.target.value);
+    }else if (e.target.name == "expected") {
+      setExpected(e.target.value);
     }
   };
 
@@ -251,6 +265,29 @@ function Update() {
                 placeholder="जन्म स्थान 
                 "
                 onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={height}
+                name="height"
+                placeholder="ऊंचाई 
+                "
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={marstatus}
+                name="marstatus"
+                placeholder="वैवाहिक स्थिति
+                "onChange={handleData}
               ></input>
             </div>
           </div>
@@ -336,14 +373,26 @@ function Update() {
               ></input>
             </div>
           </div>
-
+          <div class="row">
+            <div class="col-90">
+              <textarea
+                name="expected"
+                value={expected}
+                cols="30"
+                rows="6"
+                placeholder="आप किस तरह का लाइफ पार्टनर तलाश रहे हैं
+                "
+                onChange={handleData}
+              ></textarea>
+            </div>
+          </div>
           <div class="row">
             <div class="col-90">
               <textarea
                 name="address"
                 value={address}
                 cols="30"
-                rows="10"
+                rows="6"
                 placeholder="स्थायी पता
                 "
                 onChange={handleData}
