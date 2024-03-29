@@ -1,3 +1,55 @@
+.greet-img{
+  border: 1px solid red;
+  width: 250px;
+  height: 300px;
+   margin: auto;
+}
+
+.greet-logo{
+  height: 100%;
+  width: 100%;
+}
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
 .center {
   
   display: flex;
@@ -133,7 +185,7 @@
   width: 300px;
 }
  .profile{
-border: 1px solid gray;
+border: 1px solid #ebe4e4;
 height: auto;
 width: 20%;
 text-align: center;
@@ -178,7 +230,7 @@ text-align: center;
  margin: 25px;
  }
  .bio{
-  border: 1px solid gray;
+  border: 1px solid #ebe4e4;
   height: auto;
   width: 70%;
   margin: auto;
@@ -191,7 +243,7 @@ text-align: center;
  }
  .bio-center{
   padding: 20px;
-    border: 1px solid gray;
+    border: 1px solid #ebe4e4;
     height: auto;
     width: auto;
     margin: auto;
@@ -250,7 +302,7 @@ text-align: center;
 }
 .app-header{
   box-sizing: border-box;
-    border: 1px solid gray;
+    border: 1px solid #ebe4e4;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -259,7 +311,7 @@ text-align: center;
     align-items: end;
 }
 .btn-login{
-  border: 1px solid gray;
+  border: 1px solid #ebe4e4;
     height: 36px;
     background-color: white;
     color: red;
@@ -267,7 +319,7 @@ text-align: center;
     font-weight: bold;
 }
 .btn-create{
-  border: 1px solid gray;
+  border: 1px solid #ebe4e4;
     height: 36px;
     background-color: white;
     color: red;
@@ -393,7 +445,7 @@ input[type=file]::file-selector-button:hover {
     justify-content: space-between;
 }
 .btn-login{
-  border: 1px solid gray;
+  border: 1px solid #ebe4e4;
     height: 36px;
     background-color: white;
     color: red;
@@ -416,7 +468,7 @@ input[type=file]::file-selector-button:hover {
   margin: 10px;
 }
 .bio {
-  border: 1px solid gray;
+  border: 1px solid #ebe4e4;
   height: auto;
   width: 100%;
   margin: auto;
