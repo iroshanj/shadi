@@ -21,6 +21,10 @@ function Dashboard() {
       jsonData = jsonData.filter(function (i) {
         return i.gender != curUserGen;
       });
+      jsonData = jsonData.filter(function (i) {
+        return i.paystatus == 1;
+      });
+
       console.log(jsonData);
       setCards(jsonData.reverse());
     };

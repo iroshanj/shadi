@@ -32,7 +32,7 @@ function Login() {
         localStorage.setItem("curUser", JSON.stringify(result.user[0]));
         navigate("/dashboard");
       } else {
-        alert("कृपया सही ईमेल और पासवर्ड दर्ज करें");
+        alert("कृपया पंजीकृत ईमेल और पासवर्ड दर्ज करें");
       }
     }
   };

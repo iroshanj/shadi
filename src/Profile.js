@@ -33,7 +33,7 @@ console.log('PROFILE-STO');
       const result = await response.json();
   
       if (result !== null) {
-        alert('Your profile deleted successfully')
+        alert('आपका बायोडाटा हमेशा के लिए हटा दिया गया है')
         localStorage.clear();
         navigate("/");
       } else {
