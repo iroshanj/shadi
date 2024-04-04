@@ -5,6 +5,13 @@
    margin: auto;
 }
 
+.line-seperator{
+  width: 100%;
+    background-color: black;
+    height: 1px;
+
+}
+
 .greet-logo{
   height: 100%;
   width: 100%;
@@ -221,6 +228,13 @@ text-align: center;
   font-weight: bold;
   width:165px;
   text-align: justify;
+ }
+
+ .heading-sampark{
+  font-size: 20px;
+  font-weight: bold;
+color: red;
+  text-align: center;
  }
  .data{
   font-size: 20px;

@@ -148,10 +148,7 @@ function Dashboard() {
               <div className="space"></div>
 
               <div className="name-holder">
-              <div className="bio-row">
-                  <div className="heading">वैवाहिक स्थिति</div>
-                  <div className="data">{allCards[cardToShow]?.marstatus}</div>
-                </div>
+             
               
                 <div className="bio-row">
                   <div className="heading">ऊंचाई</div>
@@ -183,19 +180,7 @@ function Dashboard() {
                   <div className="heading">माता/पिता</div>
                   <div className="data">{allCards[cardToShow]?.father}</div>
                 </div>
-                <div className="bio-row">
-                  <div className="heading">सम्पर्क-1 </div>
-                  <div className="data">{allCards[cardToShow]?.mobile}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">सम्पर्क-2 </div>
-                  <div className="data">{allCards[cardToShow]?.contact}</div>
-                </div>
                 
-                <div className="bio-row">
-                  <div className="heading">सम्पर्क-3 </div>
-                  <div className="data">{allCards[cardToShow]?.email}</div>
-                </div>
                 <div className="bio-row">
                   <div className="heading">जाति विवरण</div>
                   <div className="data">{allCards[cardToShow]?.cast}</div>
@@ -208,7 +193,34 @@ function Dashboard() {
                   <div className="heading">स्थायी पता</div>
                   <div className="data">{allCards[cardToShow]?.address}</div>
                 </div>
+                <div className="bio-row">
+                  <div className="heading">वैवाहिक स्थिति</div>
+                  <div className="data">{allCards[cardToShow]?.marstatus}</div>
+                </div>
+
+                
               </div>
+
+              <div className="line-seperator"></div>
+              <div className="space"></div>
+                <div className="heading-sampark">
+                   संपर्क सूत्र
+                </div>
+                <div className="space"></div>
+                <div className="line-seperator"></div>
+                <div className="">
+                   <h2>संपर्क-1</h2>
+                   <p className="data">{allCards[cardToShow]?.email}</p>
+                </div>
+                <div className="">
+                   <h2>संपर्क-2</h2>
+                   <p className="data">{allCards[cardToShow]?.mobile}</p>
+                </div>
+                <div className="">
+                   <h2>संपर्क-3</h2>
+                   <p className="data">{allCards[cardToShow]?.contact}</p>
+                </div>
+              
             </div>
           </div>
         ):null}
