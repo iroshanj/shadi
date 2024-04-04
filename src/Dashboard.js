@@ -180,16 +180,21 @@ function Dashboard() {
                   <div className="data">{allCards[cardToShow]?.income}</div>
                 </div>
                 <div className="bio-row">
-                  <div className="heading">मोबाइल नंबर </div>
-                  <div className="data">{allCards[cardToShow]?.mobile}</div>
-                </div>
-                <div className="bio-row">
                   <div className="heading">माता/पिता</div>
                   <div className="data">{allCards[cardToShow]?.father}</div>
                 </div>
                 <div className="bio-row">
-                  <div className="heading">माता/पिता मोबाइल </div>
+                  <div className="heading">सम्पर्क-1 </div>
+                  <div className="data">{allCards[cardToShow]?.mobile}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">सम्पर्क-2 </div>
                   <div className="data">{allCards[cardToShow]?.contact}</div>
+                </div>
+                
+                <div className="bio-row">
+                  <div className="heading">सम्पर्क-3 </div>
+                  <div className="data">{allCards[cardToShow]?.email}</div>
                 </div>
                 <div className="bio-row">
                   <div className="heading">जाति विवरण</div>
