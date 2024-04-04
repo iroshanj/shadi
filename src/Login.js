@@ -19,7 +19,7 @@ function Login() {
       };
 
       e.preventDefault();
-      const response = await fetch(`${rooturl}/login`, {
+      const response = await fetch(`${rooturl}/login.php`, {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -28,8 +28,8 @@ function Login() {
       });
       const result = await response.json();
  
-      if (result.status === 200) {
-        localStorage.setItem("curUser", JSON.stringify(result.user[0]));
+      if (result.id > 0) {
+        localStorage.setItem("curUser", JSON.stringify(result));
         navigate("/dashboard");
       } else {
         alert("कृपया पंजीकृत ईमेल और पासवर्ड दर्ज करें");

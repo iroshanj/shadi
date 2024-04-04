@@ -37,10 +37,10 @@ function Update() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`${rooturl}/user`);
+      const response = await fetch(`${rooturl}/biodatagetallusers.php`);
       var jsonData = await response.json();
-      jsonData = jsonData.filter(function (i) {
-        return i._id == curUserGen._id;
+      jsonData = jsonData.info.filter(function (i) {
+        return i.id == curUserGen.id;
       });
       console.log("From Update compo");
       console.log(jsonData);
@@ -72,7 +72,7 @@ function Update() {
       alert("कृपया अपना फोटो चुनें और अपलोड पर क्लिक करें");
     } else {
       const dataObj = {
-        id: curUserGen._id,
+        id: curUserGen.id,
         paystatus: 0,
         transid: "id",
         name: name,
@@ -101,7 +101,7 @@ function Update() {
       console.log(dataObj);
 
       e.preventDefault();
-      const response = await fetch(`${rooturl}/update`, {
+      const response = await fetch(`${rooturl}/update.php`, {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -109,10 +109,11 @@ function Update() {
         },
       });
       const result = await response.json();
-      if (typeof result !== null) {
+      if (result.status == true) {
         localStorage.clear();
         navigate("/update-success");
       } else {
+        
       }
     }
   };
@@ -138,18 +139,7 @@ function Update() {
     setUrl(updatedurl);
     console.log('GGGG',result);
   };
-  /*const onImageUpload = async function (e) {
-    setClickedUpload(true);
-    setShowFileUpload(false);
-    const formData = new FormData();
-    formData.append("photo", file);
-    const response = await fetch(`${rooturl}/upload`, {
-      method: "POST",
-      body: formData,
-    });
-    const result = await response.json();
-    setUrl(result.url);
-  };*/
+  
   const handleData = function (e) {
     if (e.target.name == "name") {
       setName(e.target.value);

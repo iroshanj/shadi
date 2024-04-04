@@ -16,9 +16,9 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`${rooturl}/user`);
+      const response = await fetch(`${rooturl}/biodatagetallusers.php`);
       var jsonData = await response.json();
-      jsonData = jsonData.filter(function (i) {
+      jsonData = jsonData.info.filter(function (i) {
         return i.gender != curUserGen;
       });
       jsonData = jsonData.filter(function (i) {
@@ -68,8 +68,8 @@ function Dashboard() {
 
       <div className="app-header">
         <div className="logo"> </div>
-
-        {paystatus?(<div className=" ">
+           
+        {paystatus==1?(<div className=" ">
           <button className="btn-create" onClick={onMyProfile}>
             अपनी प्रोफाइल देखें
           </button>
@@ -85,7 +85,7 @@ function Dashboard() {
       <div className="space"></div>
 
       <div className="dash">
-        {!paystatus ?(
+        {paystatus==0 ?(
           <div className="bio-center">
             <p>
               <strong>
@@ -103,7 +103,7 @@ function Dashboard() {
           </div>
         ):null}
 
-        {paystatus && (allCards.length == 0)? (
+        {paystatus==1 && (allCards.length == 0)? (
           <div className="loader-bap">
              
             <div className="space"></div>
@@ -119,7 +119,7 @@ function Dashboard() {
           </div>
         ):null}
 
-        {paystatus && (allCards.length > 0) ? (
+        {paystatus==1 && (allCards.length > 0) ? (
           <div className="bio">
             <div className="space"></div>
             <div className="space"></div>

@@ -10,6 +10,9 @@ function Greet() {
     <>
       <div id="myModal" class="modal">
         <div class="modal-content">
+          <div>
+          <h4 className="view-three">जैन प्रत्याशी परिचय पत्रिका</h4>
+          </div>
           <span class="close" onClick={closeModel}>
             &times;
           </span>
@@ -18,7 +21,7 @@ function Greet() {
          </div>
          <div className="space"></div>
          <div>
-            <h2 className="view-three">Unlimited Biodata's in only one time  charge of Rs. 501/-</h2>
+            <h3 className="view-three">Lifetime Membership in only one time  charge of Rs. 501/-</h3>
          </div>
         </div>
       </div>

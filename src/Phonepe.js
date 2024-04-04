@@ -3,7 +3,7 @@
 function Phonepe() {
   var curUserGen = localStorage.getItem("curUser");
   curUserGen = JSON.parse(curUserGen);
-  curUserGen = curUserGen._id;
+  curUserGen = curUserGen.id;
   const navigate = useNavigate();
 
   const onLogout = function () {

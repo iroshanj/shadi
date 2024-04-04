@@ -21,9 +21,9 @@ console.log('PROFILE-STO');
   const onDelete = async function(){
     if(window.confirm('क्या आप निश्चित रूप से अपनी प्रोफ़ाइल हटाना चाहते हैं?')){
       const dataObj = {
-        id: curUserGen._id,
+        id: curUserGen.id
       };
-      const response = await fetch(`${rooturl}/delete`, {
+      const response = await fetch(`${rooturl}/delete.php`, {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -32,7 +32,7 @@ console.log('PROFILE-STO');
       });
       const result = await response.json();
   
-      if (result !== null) {
+      if (result.status == true) {
         alert('आपका बायोडाटा हमेशा के लिए हटा दिया गया है')
         localStorage.clear();
         navigate("/");
@@ -136,10 +136,7 @@ console.log('PROFILE-STO');
                   <div className="heading">मोबाइल नंबर </div>
                   <div className="data">{curUserGen.mobile}</div>
                 </div>
-                <div className="bio-row">
-                  <div className="heading">ईमेल</div>
-                  <div className="data">{curUserGen.email}</div>
-                </div>
+                
                 <div className="bio-row">
                   <div className="heading">माता/पिता</div>
                   <div className="data">{curUserGen.father}</div>

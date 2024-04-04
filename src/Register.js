@@ -102,15 +102,12 @@ function Register() {
         cast: cast,
         url: url,
         height:height,
-        age:100,
-        blood:"NA",
         marstatus:marstatus,
-        hobbies:"NA",
         expected:expected
       };
 
       e.preventDefault();
-      const response = await fetch(`${rooturl}/user`, {
+      const response = await fetch(`${rooturl}/newbiodata.php`, {
         method: "POST",
         body: JSON.stringify(dataObj),
         headers: {
@@ -118,7 +115,7 @@ function Register() {
         },
       });
       const result = await response.json();
-      if (result.status === 200) {
+      if (result.status== true) {
         navigate("/success");
       } else {
       }
@@ -132,19 +129,7 @@ function Register() {
     setFile(e.target.files[0]);
     setShowUpload(true);
   };
-  /*const onImageUpload = async function (e) {
-    setClickedUpload(true);
-    setShowFileUpload(false);
-    const formData = new FormData();
-    formData.append("photo", file);
-    const response = await fetch(`${rooturl}/upload`, {
-      method: "POST",
-      body: formData,
-    });
-    const result = await response.json();
-    setUrl(result.url);
-    console.log('GGGG',result.url);
-  };*/
+   
   const onImageUpload = async function (e) {
     setClickedUpload(true);
     setShowFileUpload(false);
