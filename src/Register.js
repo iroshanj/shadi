@@ -29,8 +29,7 @@ function Register() {
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
   const [height, setHeight] = useState(null);
-    const [expected, setExpected] = useState(null);
-
+ 
 
   const onSave = async function (e) {
     //var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
@@ -71,9 +70,7 @@ function Register() {
       alert("अपनी जाति का विवरण दर्ज करें");
     } else if (password.length < 8) {
       alert("आपका पासवर्ड कम से कम 8 अक्षर लंबा होना चाहिए");
-    } else if (expected == null) {
-      alert("अपेक्षित जीवन साथी के बारे में दर्ज करें");
-    }else if (address == null) {
+    }  else if (address == null) {
       alert("अपना स्थायी पता दर्ज करें");
     } else {
       const dataObj = {
@@ -100,7 +97,7 @@ function Register() {
         url: url,
         height:height,
         marstatus:100,
-        expected:expected
+        expected:"hiii"
       };
 
       e.preventDefault();
@@ -176,9 +173,7 @@ function Register() {
       setPob(e.target.value);
     }else if (e.target.name == "height") {
       setHeight(e.target.value);
-    }    else if (e.target.name == "expected") {
-      setExpected(e.target.value);
-    }
+    }    
   };
 
   const btnUpload = showUpload ? (
@@ -407,19 +402,7 @@ function Register() {
               ></input>
             </div>
           </div>
-          <div class="row">
-            <div class="col-90">
-              <textarea
-                name="expected"
-                value={expected}
-                cols="30"
-                rows="6"
-                placeholder="अपना परिचय लिखे, आपके परिवार में कौन कौन है, आप कैसा जीवन साथी चाहते हैं, आपके शौक कौन से हैं, भाई बहन की जानकारी, कोई विशेष जानकारी इत्यादि"
-                
-                onChange={handleData}
-              ></textarea>
-            </div>
-          </div>
+           
           <div class="row">
             <div class="col-90">
               <textarea

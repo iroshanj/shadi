@@ -151,18 +151,9 @@ function Dashboard() {
 
              
               <div className="space"></div>
-                <div className="heading-sampark">
-                परिचय 
-                </div>
                 <div className="space"></div>
                
-                <div className="">
-                   <p className="data">{allCards[cardToShow]?.expected}</p>
-                </div>
-
               <div className="name-holder">
-             
-              
                 <div className="bio-row">
                   <div className="heading">ऊंचाई</div>
                   <div className="data">{allCards[cardToShow]?.height}</div>
