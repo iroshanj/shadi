@@ -29,8 +29,7 @@ function Register() {
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
   const [height, setHeight] = useState(null);
-    const [marstatus, setmarstatus] = useState(null);
-   const [expected, setExpected] = useState(null);
+    const [expected, setExpected] = useState(null);
 
 
   const onSave = async function (e) {
@@ -52,9 +51,7 @@ function Register() {
       alert("जन्म स्थान दर्ज करें");
     } else if (height == null) {
       alert("ऊंचाई दर्ज करें");
-    }  else if (marstatus == null) {
-      alert("वैवाहिक स्थिति दर्ज करें");
-    }else if (mobile == null) {
+    }  else if (mobile == null) {
       alert("दस अंकों का मोबाइल नंबर दर्ज करें");
     } else if (!reMail.test(email)) {
       alert("वैध ईमेल आईडी दर्ज करें");
@@ -102,7 +99,7 @@ function Register() {
         cast: cast,
         url: url,
         height:height,
-        marstatus:marstatus,
+        marstatus:100,
         expected:expected
       };
 
@@ -179,9 +176,7 @@ function Register() {
       setPob(e.target.value);
     }else if (e.target.name == "height") {
       setHeight(e.target.value);
-    }  else if (e.target.name == "marstatus") {
-      setmarstatus(e.target.value);
-    } else if (e.target.name == "expected") {
+    }    else if (e.target.name == "expected") {
       setExpected(e.target.value);
     }
   };
@@ -295,18 +290,7 @@ function Register() {
           </div>
           
           
-          <div class="row">
-            <div class="col-90">
-              <input
-                type="text"
-                value={marstatus}
-                name="marstatus"
-                placeholder="अविवाहित/तलाकशुदा/विधवा
-                "
-                onChange={handleData}
-              ></input>
-            </div>
-          </div>
+           
           
           <div class="row">
             <div class="col-90">
@@ -430,8 +414,8 @@ function Register() {
                 value={expected}
                 cols="30"
                 rows="6"
-                placeholder="आप किस तरह का जीवनसाथी ढूंढ रहे हैं
-                "
+                placeholder="अपना परिचय लिखे, आपके परिवार में कौन कौन है, आप कैसा जीवन साथी चाहते हैं, आपके शौक कौन से हैं, भाई बहन की जानकारी, कोई विशेष जानकारी इत्यादि"
+                
                 onChange={handleData}
               ></textarea>
             </div>

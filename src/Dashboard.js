@@ -140,12 +140,25 @@ function Dashboard() {
               <div className="space"></div>
               <div className="can-name">{allCards[cardToShow]?.name}</div>
               <div className="space"></div>
+              <div className="can-office">{allCards[cardToShow]?.education}</div>
+              <div className="space"></div>
               <div className="can-job">{allCards[cardToShow]?.profession}</div>
               <div className="space"></div>
               <div className="can-office">
                 {allCards[cardToShow]?.oficelocation}
               </div>
               <div className="space"></div>
+
+             
+              <div className="space"></div>
+                <div className="heading-sampark">
+                परिचय 
+                </div>
+                <div className="space"></div>
+               
+                <div className="">
+                   <p className="data">{allCards[cardToShow]?.expected}</p>
+                </div>
 
               <div className="name-holder">
              
@@ -167,10 +180,7 @@ function Dashboard() {
                   <div className="data">{allCards[cardToShow]?.pob}</div>
                 </div>
 
-                <div className="bio-row">
-                  <div className="heading">शिक्षा</div>
-                  <div className="data">{allCards[cardToShow]?.education}</div>
-                </div>
+                 
 
                 <div className="bio-row">
                   <div className="heading">मासिक आय</div>
@@ -185,21 +195,19 @@ function Dashboard() {
                   <div className="heading">जाति विवरण</div>
                   <div className="data">{allCards[cardToShow]?.cast}</div>
                 </div>
-                <div className="bio-row">
-                  <div className="heading">अपेक्षाएं</div>
-                  <div className="data">{allCards[cardToShow]?.expected}</div>
-                </div>
+                
                 <div className="bio-row">
                   <div className="heading">स्थायी पता</div>
                   <div className="data">{allCards[cardToShow]?.address}</div>
                 </div>
-                <div className="bio-row">
-                  <div className="heading">वैवाहिक स्थिति</div>
-                  <div className="data">{allCards[cardToShow]?.marstatus}</div>
-                </div>
+                
 
                 
               </div>
+
+
+             
+
 
               <div className="line-seperator"></div>
               <div className="space"></div>
@@ -208,6 +216,7 @@ function Dashboard() {
                 </div>
                 <div className="space"></div>
                 <div className="line-seperator"></div>
+
                 <div className="">
                    <h2>संपर्क-1</h2>
                    <p className="data">{allCards[cardToShow]?.email}</p>
