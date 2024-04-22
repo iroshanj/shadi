@@ -63,17 +63,17 @@ function Dashboard() {
   return (
     <>
       <div className="top-bar-color"></div>
-
       <div className="space"></div>
-
       <div className="app-header">
         <div className="logo"> </div>
-           
-        {paystatus==1?(<div className=" ">
-          <button className="btn-create" onClick={onMyProfile}>
-            अपनी प्रोफाइल देखें
-          </button>
-        </div>):null}
+
+        {paystatus == 1 ? (
+          <div className=" ">
+            <button className="btn-create" onClick={onMyProfile}>
+              अपनी प्रोफाइल देखें
+            </button>
+          </div>
+        ) : null}
 
         <div className=" ">
           <button className="btn-create" onClick={onLogout}>
@@ -85,12 +85,10 @@ function Dashboard() {
       <div className="space"></div>
 
       <div className="dash">
-        {paystatus==0 ?(
+        {paystatus == 0 ? (
           <div className="bio-center">
             <p>
-              <strong>
-              अपना बायोडाटा प्रकाशित करने के लिए भुगतान करें
-              </strong>
+              <strong>अपना बायोडाटा प्रकाशित करने के लिए भुगतान करें</strong>
             </p>
             <div className="space"></div>
             <span className="currency">५०१ /-</span>
@@ -101,11 +99,10 @@ function Dashboard() {
               </button>
             </p>
           </div>
-        ):null}
+        ) : null}
 
-        {paystatus==1 && (allCards.length == 0)? (
+        {paystatus == 1 && allCards.length == 0 ? (
           <div className="loader-bap">
-             
             <div className="space"></div>
             <div className="space"></div>
             <div className="space"></div>
@@ -114,12 +111,11 @@ function Dashboard() {
             <div className="space"></div>
             <div className="space"></div>
             <div className="space"></div>
-             <div className="loader"></div>
-            
+            <div className="loader"></div>
           </div>
-        ):null}
+        ) : null}
 
-        {paystatus==1 && (allCards.length > 0) ? (
+        {paystatus == 1 && allCards.length > 0 ? (
           <div className="bio">
             <div className="space"></div>
             <div className="space"></div>
@@ -133,123 +129,104 @@ function Dashboard() {
               </button>
             </div>
             <div className="space"></div>
+
             <div className="card-container">
               <div className="pic-holder">
                 <img className="p-icon" src={allCards[cardToShow]?.url}></img>
               </div>
-            
-                
-             
 
-             
-                
-              <div className="name-holder">
-              <div className="bio-row">
-                  <div className="heading">नाम</div>
-                  <div className="data">{allCards[cardToShow]?.name}</div>
-                </div>
-              <div className="bio-row">
-                  <div className="heading">शिक्षा</div>
-                  <div className="data">{allCards[cardToShow]?.education}</div>
-                </div>
-              <div className="bio-row">
-                  <div className="heading">पेशा</div>
-                  <div className="data">{allCards[cardToShow]?.profession}</div>
-                </div>
-              <div className="bio-row">
-                  <div className="heading">कार्यक्षेत्र</div>
-                  <div className="data">{allCards[cardToShow]?.oficelocation}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">ऊंचाई</div>
-                  <div className="data">{allCards[cardToShow]?.height}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">जन्म तिथि</div>
-                  <div className="data">{allCards[cardToShow]?.dob}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">जन्म समय </div>
-                  <div className="data">{allCards[cardToShow]?.tob}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">जन्म स्थान </div>
-                  <div className="data">{allCards[cardToShow]?.pob}</div>
-                </div>
+              <div className="space"></div>
+              <div className="heading-sampark">janakari</div>
+              <div className="space"></div>
 
-                 
-
-                <div className="bio-row">
-                  <div className="heading">मासिक आय</div>
-                  <div className="data">{allCards[cardToShow]?.income}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">पिता</div>
-                  <div className="data">{allCards[cardToShow]?.father}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">माता</div>
-                  <div className="data">{allCards[cardToShow]?.mother}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">भाई-बहन</div>
-                  <div className="data">{allCards[cardToShow]?.sib}</div>
-                </div>
-                
-                <div className="bio-row">
-                  <div className="heading">धार्मिक विवरण</div>
-                  <div className="data">{allCards[cardToShow]?.cast}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">स्वयं गोत्र</div>
-                  <div className="data">{allCards[cardToShow]?.sgotra}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">मामा गोत्र</div>
-                  <div className="data">{allCards[cardToShow]?.mgotra}</div>
-                </div>
-                <div className="bio-row">
-                  <div className="heading">अन्य</div>
-                  <div className="data">{allCards[cardToShow]?.expected}</div>
-                </div>
-                
-                <div className="bio-row">
-                  <div className="heading">स्थायी पता</div>
-                  <div className="data">{allCards[cardToShow]?.address}</div>
-                </div>
-                
-
-                
+              <div className="">
+                <h2>नाम</h2>
+                <p className="data">{allCards[cardToShow]?.name}</p>
+              </div>
+              <div className="">
+                <h2>शिक्षा</h2>
+                <p className="data">{allCards[cardToShow]?.education}</p>
+              </div>
+              <div className="">
+                <h2>पेशा</h2>
+                <p className="data">{allCards[cardToShow]?.profession}</p>
+              </div>
+              <div className="">
+                <h2>कार्यक्षेत्र</h2>
+                <p className="data">{allCards[cardToShow]?.oficelocation}</p>
+              </div>
+              <div className="">
+                <h2>ऊंचाई</h2>
+                <p className="data">{allCards[cardToShow]?.height}</p>
+              </div>
+              <div className="">
+                <h2>जन्म तिथि</h2>
+                <p className="data">{allCards[cardToShow]?.dob}</p>
+              </div>
+              <div className="">
+                <h2>जन्म समय</h2>
+                <p className="data">{allCards[cardToShow]?.tob}</p>
+              </div>
+              <div className="">
+                <h2>जन्म स्थान</h2>
+                <p className="data">{allCards[cardToShow]?.pob}</p>
+              </div>
+              <div className="">
+                <h2>मासिक आय</h2>
+                <p className="data">{allCards[cardToShow]?.income}</p>
+              </div>
+              <div className="">
+                <h2>पिताजी</h2>
+                <p className="data">{allCards[cardToShow]?.father}</p>
+              </div>
+              <div className="">
+                <h2>माताजी</h2>
+                <p className="data">{allCards[cardToShow]?.mother}</p>
+              </div>
+              <div className="">
+                <h2>भाई बहन की संख्या</h2>
+                <p className="data">{allCards[cardToShow]?.sib}</p>
+              </div>
+              <div className="">
+                <h2>धार्मिक जानकारी</h2>
+                <p className="data">{allCards[cardToShow]?.cast}</p>
+              </div>
+              <div className="">
+                <h2>स्वयं गोत्र</h2>
+                <p className="data">{allCards[cardToShow]?.sgotra}</p>
+              </div>
+              <div className="">
+                <h2>मामा गोत्र</h2>
+                <p className="data">{allCards[cardToShow]?.mgotra}</p>
+              </div>
+              <div className="">
+                <h2>परिवार के अन्य सदस्य</h2>
+                <p className="data">{allCards[cardToShow]?.expected}</p>
+              </div>
+              <div className="">
+                <h2>स्थायी पता</h2>
+                <p className="data">{allCards[cardToShow]?.address}</p>
               </div>
 
-
-             
-
-
-              <div className="line-seperator"></div>
               <div className="space"></div>
-                <div className="heading-sampark">
-                   संपर्क सूत्र
-                </div>
-                <div className="space"></div>
-                <div className="line-seperator"></div>
+              <div className="heading-sampark">संपर्क सूत्र</div>
+              <div className="space"></div>
 
-                <div className="">
-                   <h2>संपर्क-1</h2>
-                   <p className="data">{allCards[cardToShow]?.email}</p>
-                </div>
-                <div className="">
-                   <h2>संपर्क-2</h2>
-                   <p className="data">{allCards[cardToShow]?.mobile}</p>
-                </div>
-                <div className="">
-                   <h2>संपर्क-3</h2>
-                   <p className="data">{allCards[cardToShow]?.contact}</p>
-                </div>
-              
+              <div className="">
+                <h2>संपर्क-1</h2>
+                <p className="data">{allCards[cardToShow]?.email}</p>
+              </div>
+              <div className="">
+                <h2>संपर्क-2</h2>
+                <p className="data">{allCards[cardToShow]?.mobile}</p>
+              </div>
+              <div className="">
+                <h2>संपर्क-3</h2>
+                <p className="data">{allCards[cardToShow]?.contact}</p>
+              </div>
             </div>
           </div>
-        ):null}
+        ) : null}
       </div>
     </>
   );
