@@ -137,20 +137,12 @@ function Dashboard() {
               <div className="pic-holder">
                 <img className="p-icon" src={allCards[cardToShow]?.url}></img>
               </div>
-              <div className="space"></div>
-           
-              <div className="space"></div>
-               
-              <div className="space"></div>
-               
-              <div className="space"></div>
-              
-              <div className="space"></div>
+            
+                
+             
 
              
-              <div className="space"></div>
-                <div className="space"></div>
-               
+                
               <div className="name-holder">
               <div className="bio-row">
                   <div className="heading">नाम</div>
@@ -165,7 +157,7 @@ function Dashboard() {
                   <div className="data">{allCards[cardToShow]?.profession}</div>
                 </div>
               <div className="bio-row">
-                  <div className="heading">पेशे का स्थान</div>
+                  <div className="heading">कार्यक्षेत्र</div>
                   <div className="data">{allCards[cardToShow]?.oficelocation}</div>
                 </div>
                 <div className="bio-row">
