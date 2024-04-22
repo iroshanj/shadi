@@ -136,7 +136,7 @@ function Dashboard() {
               </div>
 
               <div className="space"></div>
-              <div className="heading-sampark">janakari</div>
+              <div className="heading-sampark">बायोडाटा</div>
               <div className="space"></div>
 
               <div className="">
