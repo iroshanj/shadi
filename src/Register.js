@@ -19,6 +19,11 @@ function Register() {
   const [profession, setProfession] = useState(null);
   const [jobLocation, setJobLocation] = useState(null);
   const [parentName, setParentName] = useState(null);
+  const [motherName, setMotherName] = useState(null);
+  const [sib, setSib] = useState(null);
+  const [sgotra, setsgotra] = useState(null);
+  const [expected, setexpected] = useState(null);
+  const [mgotra, setmgotra] = useState(null);
   const [parentContact, setParentContact] = useState(null);
   const [address, setAddress] = useState(null);
   const [password, setPassword] = useState("");
@@ -62,12 +67,16 @@ function Register() {
       alert("नौकरी/व्यवसाय का पता दर्ज करें");
     } else if (typeof income == "object" || parseInt(income) < 0) {
       alert("मासिक आय दर्ज करे ");
-    } else if (parentName == null) {
-      alert("माता/पिता का नाम दर्ज करें");
-    } else if (parentContact == null) {
+    } else if (parentName == null || motherName == null ) {
+      alert("माता पिता का नाम दर्ज करें");
+    } else if (sib == null) {
+      alert("भाई बहन की संख्या दर्ज करें");
+    }else if (parentContact == null) {
       alert("अपने माता/पिता का मोबाइल नंबर दर्ज करें");
     } else if (cast == null) {
       alert("अपनी जाति का विवरण दर्ज करें");
+    } else if (sgotra == null || mgotra == null) {
+      alert("गोत्र दर्ज करें");
     } else if (password.length < 8) {
       alert("आपका पासवर्ड कम से कम 8 अक्षर लंबा होना चाहिए");
     }  else if (address == null) {
@@ -78,6 +87,10 @@ function Register() {
         transid: "id",
         name: name,
         father: parentName,
+        mother: motherName,
+        sib:sib,
+        sgotra:sgotra,
+        mgotra:mgotra,
         fathejob: "Businessman",
         dob: dob,
         pob: pob,
@@ -85,7 +98,7 @@ function Register() {
         mobile: mobile,
         gender: gender,
         email: email,
-        password: password,
+        pass: password,
         education: education,
         profession: profession,
         contact: parentContact,
@@ -97,7 +110,7 @@ function Register() {
         url: url,
         height:height,
         marstatus:100,
-        expected:"hiii"
+        expected:expected
       };
 
       e.preventDefault();
@@ -118,6 +131,10 @@ function Register() {
 
   const handleDataGender = function (e) {
     setGender(e.target.value);
+  };
+  const handleHeight = function (e) {
+    console.log(e.target.value)
+    setHeight(e.target.value);
   };
   const handleFile = function (e) {
     setFile(e.target.files[0]);
@@ -157,7 +174,15 @@ function Register() {
       setJobLocation(e.target.value);
     } else if (e.target.name == "father") {
       setParentName(e.target.value);
-    } else if (e.target.name == "contact") {
+    } else if (e.target.name == "mother") {
+      setMotherName(e.target.value);
+    } else if (e.target.name == "sib") {
+      setSib(e.target.value);
+    } else if (e.target.name == "sgotra") {
+      setsgotra(e.target.value);
+    } else if (e.target.name == "mgotra") {
+      setmgotra(e.target.value);
+    }else if (e.target.name == "contact") {
       setParentContact(e.target.value);
     } else if (e.target.name == "address") {
       setAddress(e.target.value);
@@ -171,8 +196,8 @@ function Register() {
       setTob(e.target.value);
     } else if (e.target.name == "pob") {
       setPob(e.target.value);
-    }else if (e.target.name == "height") {
-      setHeight(e.target.value);
+    } else if (e.target.name == "expected") {
+      setexpected(e.target.value);
     }    
   };
 
@@ -201,7 +226,7 @@ function Register() {
             <div class="row">
               <div class="col-90">
                 <label for="images" class="drop-container" id="dropcontainer">
-                  <span class="drop-title">अपनी फोटो अपलोड करें</span>
+                  <span class="drop-title">प्रत्याशी फोटो अपलोड करें</span>
                   <input
                     type="file"
                     name="file"
@@ -224,6 +249,7 @@ function Register() {
               </select>
             </div>
           </div>
+          
 
           <div class="row">
             <div class="col-90">
@@ -271,16 +297,37 @@ function Register() {
               ></input>
             </div>
           </div>
+           
           <div class="row">
             <div class="col-90">
-              <input
-                type="text"
-                value={height}
-                name="height"
-                placeholder="ऊंचाई 
-                "
-                onChange={handleData}
-              ></input>
+              <select value={height} onChange={handleHeight} id="drop-dwn">
+                <option>ऊंचाई</option>
+                <option value="4 feet 0 inches">4 feet 0 inches</option>
+                <option value="4 feet 1 inches">4 feet 1 inches</option>
+                <option value="4 feet 2 inches">4 feet 2 inches</option>
+                <option value="4 feet 3 inches">4 feet 3 inches</option>
+                <option value="4 feet 4 inches">4 feet 4 inches</option>
+                <option value="4 feet 5 inches">4 feet 5 inches</option>
+                <option value="4 feet 6 inches">4 feet 6 inches</option>
+                <option value="4 feet 7 inches">4 feet 7 inches</option>
+                <option value="4 feet 8 inches">4 feet 8 inches</option>
+                <option value="4 feet 9 inches">4 feet 9 inches</option>
+                <option value="4 feet 10 inches">4 feet 10 inches</option>
+                <option value="4 feet 11 inches">4 feet 11 inches</option>
+                <option value="5 feet 0 inches">5 feet 0 inches</option>
+                <option value="5 feet 1 inches">5 feet 1 inches</option>
+                <option value="5 feet 2 inches">5 feet 2 inches</option>
+                <option value="5 feet 3 inches">5 feet 3 inches</option>
+                <option value="5 feet 4 inches">5 feet 4 inches</option>
+                <option value="5 feet 5 inches">5 feet 5 inches</option>
+                <option value="5 feet 6 inches">5 feet 6 inches</option>
+                <option value="5 feet 7 inches">5 feet 7 inches</option>
+                <option value="5 feet 8 inches">5 feet 8 inches</option>
+                <option value="5 feet 9 inches">5 feet 9 inches</option>
+                <option value="5 feet 10 inches">5 feet 10 inches</option>
+                <option value="5 feet 11 inches">5 feet 11 inches</option>
+                <option value="6 feet">6 feet</option>
+              </select>
             </div>
           </div>
           
@@ -362,7 +409,29 @@ function Register() {
                 type="text"
                 value={parentName}
                 name="father"
-                placeholder="माता/पिता का नाम"
+                placeholder="पिता का नाम"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={motherName}
+                name="mother"
+                placeholder="माता का नाम"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={sib}
+                name="sib"
+                placeholder="भाई बहन की संख्या"
                 onChange={handleData}
               ></input>
             </div>
@@ -385,7 +454,29 @@ function Register() {
                 type="text"
                 value={cast}
                 name="cast"
-                placeholder="जाति विवरण"
+                placeholder="धार्मिक विवरण"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={sgotra}
+                name="sgotra"
+                placeholder="स्वयं का गोत्र"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={mgotra}
+                name="mgotra"
+                placeholder="मामा का गोत्र"
                 onChange={handleData}
               ></input>
             </div>
@@ -402,7 +493,19 @@ function Register() {
               ></input>
             </div>
           </div>
-           
+          <div class="row">
+            <div class="col-90">
+              <textarea
+                name="expected"
+                value={expected}
+                cols="30"
+                rows="6"
+                placeholder="परिवार के अन्य सदस्यों की जानकारी दर्ज करें। जैसे उनका नाम, आपसे संबंध, इत्यादि
+                "
+                onChange={handleData}
+              ></textarea>
+            </div>
+          </div>
           <div class="row">
             <div class="col-90">
               <textarea

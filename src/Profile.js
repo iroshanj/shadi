@@ -79,7 +79,7 @@ console.log('PROFILE-STO');
             <div className="space"></div>
             <div className="space"></div>
             <div className="btn-container">
-            <strong>मेरी प्रोफाइल</strong>
+             
             </div>
             <div className="space"></div>
             <div className="card-container">
@@ -109,10 +109,7 @@ console.log('PROFILE-STO');
                   <div className="heading">ऊंचाई</div>
                   <div className="data">{curUserGen.height}</div>
                 </div>
-                <div className="bio-row">
-                  <div className="heading">वैवाहिक स्थिति</div>
-                  <div className="data">{curUserGen.marstatus}</div>
-                </div>
+                
                  
                 <div className="bio-row">
                   <div className="heading">पेशा</div>
@@ -136,10 +133,17 @@ console.log('PROFILE-STO');
                   <div className="heading">मोबाइल नंबर </div>
                   <div className="data">{curUserGen.mobile}</div>
                 </div>
-                
                 <div className="bio-row">
-                  <div className="heading">माता/पिता</div>
+                  <div className="heading">पिता</div>
                   <div className="data">{curUserGen.father}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">माता</div>
+                  <div className="data">{curUserGen.mother}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">भाई-बहन</div>
+                  <div className="data">{curUserGen.sib}</div>
                 </div>
                 <div className="bio-row">
                   <div className="heading">माता/पिता मोबाइल </div>
@@ -148,6 +152,14 @@ console.log('PROFILE-STO');
                 <div className="bio-row">
                   <div className="heading">जाति विवरण</div>
                   <div className="data">{curUserGen.cast}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">स्वयं गोत्र</div>
+                  <div className="data">{curUserGen.sgotra}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">मामा गोत्र</div>
+                  <div className="data">{curUserGen.mgotra}</div>
                 </div>
                 <div className="bio-row">
                   <div className="heading">अपेक्षित</div>

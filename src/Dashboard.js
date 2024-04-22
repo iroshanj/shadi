@@ -138,15 +138,13 @@ function Dashboard() {
                 <img className="p-icon" src={allCards[cardToShow]?.url}></img>
               </div>
               <div className="space"></div>
-              <div className="can-name">{allCards[cardToShow]?.name}</div>
+           
               <div className="space"></div>
-              <div className="can-office">{allCards[cardToShow]?.education}</div>
+               
               <div className="space"></div>
-              <div className="can-job">{allCards[cardToShow]?.profession}</div>
+               
               <div className="space"></div>
-              <div className="can-office">
-                {allCards[cardToShow]?.oficelocation}
-              </div>
+              
               <div className="space"></div>
 
              
@@ -154,6 +152,22 @@ function Dashboard() {
                 <div className="space"></div>
                
               <div className="name-holder">
+              <div className="bio-row">
+                  <div className="heading">नाम</div>
+                  <div className="data">{allCards[cardToShow]?.name}</div>
+                </div>
+              <div className="bio-row">
+                  <div className="heading">शिक्षा</div>
+                  <div className="data">{allCards[cardToShow]?.education}</div>
+                </div>
+              <div className="bio-row">
+                  <div className="heading">पेशा</div>
+                  <div className="data">{allCards[cardToShow]?.profession}</div>
+                </div>
+              <div className="bio-row">
+                  <div className="heading">पेशे का स्थान</div>
+                  <div className="data">{allCards[cardToShow]?.oficelocation}</div>
+                </div>
                 <div className="bio-row">
                   <div className="heading">ऊंचाई</div>
                   <div className="data">{allCards[cardToShow]?.height}</div>
@@ -178,13 +192,33 @@ function Dashboard() {
                   <div className="data">{allCards[cardToShow]?.income}</div>
                 </div>
                 <div className="bio-row">
-                  <div className="heading">माता/पिता</div>
+                  <div className="heading">पिता</div>
                   <div className="data">{allCards[cardToShow]?.father}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">माता</div>
+                  <div className="data">{allCards[cardToShow]?.mother}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">भाई-बहन</div>
+                  <div className="data">{allCards[cardToShow]?.sib}</div>
                 </div>
                 
                 <div className="bio-row">
-                  <div className="heading">जाति विवरण</div>
+                  <div className="heading">धार्मिक विवरण</div>
                   <div className="data">{allCards[cardToShow]?.cast}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">स्वयं गोत्र</div>
+                  <div className="data">{allCards[cardToShow]?.sgotra}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">मामा गोत्र</div>
+                  <div className="data">{allCards[cardToShow]?.mgotra}</div>
+                </div>
+                <div className="bio-row">
+                  <div className="heading">अन्य</div>
+                  <div className="data">{allCards[cardToShow]?.expected}</div>
                 </div>
                 
                 <div className="bio-row">

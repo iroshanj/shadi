@@ -11,7 +11,7 @@ function Greet() {
       <div id="myModal" class="modal">
         <div class="modal-content">
           <div>
-          <h4 className="view-three">जैन प्रत्याशी परिचय पत्रिका</h4>
+          <h4 className="view-three">दिगंबर जैन प्रत्याशी परिचय पत्रिका</h4>
           </div>
           <span class="close" onClick={closeModel}>
             &times;

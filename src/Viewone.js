@@ -16,7 +16,7 @@ function Viewone() {
       <div className="space"></div>
 
       <div className="app-header">
-        <div className="logo">पवित्र संजोग, जैन युवक-युवती परिचय पत्रिका </div>
+        <div className="logo">पवित्र संजोग, दिगंबर जैन युवक-युवती परिचय पत्रिका </div>
         <div>
           {" "}
           <Link to="/register">

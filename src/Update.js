@@ -30,8 +30,11 @@ function Update() {
   const [pob, setPob] = useState(null);
   const [tob, setTob] = useState(null);
   const [height, setHeight] = useState(null);
-  const [marstatus, setmarstatus] = useState(null);
-  const [expected, setExpected] = useState(null);
+   const [expected, setExpected] = useState(null);
+   const [mgotra, setmgotra] = useState(null);
+   const [sgotra, setsgotra] = useState(null);
+
+
   var curUserGen = localStorage.getItem("curUser");
   curUserGen = JSON.parse(curUserGen);
 
@@ -49,8 +52,7 @@ function Update() {
       setDob(jsonData[0].dob);
       setPob(jsonData[0].pob);
       setHeight(jsonData[0].height);
-      setmarstatus(jsonData[0].marstatus);
-      setMobile(jsonData[0].mobile);
+       setMobile(jsonData[0].mobile);
       setEducation(jsonData[0].education);
       setProfession(jsonData[0].profession);
       setParentContact(jsonData[0].contact);
@@ -61,6 +63,9 @@ function Update() {
       setAddress(jsonData[0].address);
       setEmail(jsonData[0].email);
       setUrl(jsonData[0].url);
+      setmgotra(jsonData[0].mgotra);
+      setsgotra(jsonData[0].sgotra);
+
     };
     fetchData();
   }, []);
@@ -80,7 +85,7 @@ function Update() {
         fathejob: "Businessman",
         dob: dob,
         pob: pob,
-        marstatus:marstatus,
+        marstatus:"hh",
         height:height,
         tob: tob,
         mobile: mobile,
@@ -97,6 +102,8 @@ function Update() {
         income: income,
         cast: cast,
         url: url,
+        mgotra:mgotra,
+        sgotra:sgotra
       };
       console.log(dataObj);
 
@@ -120,6 +127,10 @@ function Update() {
 
   const handleDataGender = function (e) {
     setGender(e.target.value);
+  };
+  const handleHeight = function (e) {
+    
+    setHeight(e.target.value);
   };
   const handleFile = function (e) {
     setFile(e.target.files[0]);
@@ -169,15 +180,15 @@ function Update() {
       setIncome(e.target.value);
     } else if (e.target.name == "cast") {
       setCast(e.target.value);
-    } else if (e.target.name == "tob") {
+    } else if (e.target.name == "mgotra") {
+      setmgotra(e.target.value);
+    } else if (e.target.name == "sgotra") {
+      setsgotra(e.target.value);
+    }else if (e.target.name == "tob") {
       setTob(e.target.value);
     } else if (e.target.name == "pob") {
       setPob(e.target.value);
-    }else if (e.target.name == "height") {
-      setHeight(e.target.value);
-    }else if (e.target.name == "marstatus") {
-      setmarstatus(e.target.value);
-    }else if (e.target.name == "expected") {
+    }  else if (e.target.name == "expected") {
       setExpected(e.target.value);
     }
   };
@@ -207,7 +218,7 @@ function Update() {
             <div class="row">
               <div class="col-90">
                 <label for="images" class="drop-container" id="dropcontainer">
-                  <span class="drop-title">अपनी फोटो अपलोड करें</span>
+                  <span class="drop-title">प्रत्याशी फोटो अपलोड करें</span>
                   <input
                     type="file"
                     name="file"
@@ -258,29 +269,40 @@ function Update() {
               ></input>
             </div>
           </div>
+           
           <div class="row">
             <div class="col-90">
-              <input
-                type="text"
-                value={height}
-                name="height"
-                placeholder="ऊंचाई 
-                "
-                onChange={handleData}
-              ></input>
+              <select value={height} onChange={handleHeight} id="drop-dwn">
+                
+                <option value="4 feet 0 inches">4 feet 0 inches</option>
+                <option value="4 feet 1 inches">4 feet 1 inches</option>
+                <option value="4 feet 2 inches">4 feet 2 inches</option>
+                <option value="4 feet 3 inches">4 feet 3 inches</option>
+                <option value="4 feet 4 inches">4 feet 4 inches</option>
+                <option value="4 feet 5 inches">4 feet 5 inches</option>
+                <option value="4 feet 6 inches">4 feet 6 inches</option>
+                <option value="4 feet 7 inches">4 feet 7 inches</option>
+                <option value="4 feet 8 inches">4 feet 8 inches</option>
+                <option value="4 feet 9 inches">4 feet 9 inches</option>
+                <option value="4 feet 10 inches">4 feet 10 inches</option>
+                <option value="4 feet 11 inches">4 feet 11 inches</option>
+                <option value="5 feet 0 inches">5 feet 0 inches</option>
+                <option value="5 feet 1 inches">5 feet 1 inches</option>
+                <option value="5 feet 2 inches">5 feet 2 inches</option>
+                <option value="5 feet 3 inches">5 feet 3 inches</option>
+                <option value="5 feet 4 inches">5 feet 4 inches</option>
+                <option value="5 feet 5 inches">5 feet 5 inches</option>
+                <option value="5 feet 6 inches">5 feet 6 inches</option>
+                <option value="5 feet 7 inches">5 feet 7 inches</option>
+                <option value="5 feet 8 inches">5 feet 8 inches</option>
+                <option value="5 feet 9 inches">5 feet 9 inches</option>
+                <option value="5 feet 10 inches">5 feet 10 inches</option>
+                <option value="5 feet 11 inches">5 feet 11 inches</option>
+                <option value="6 feet">6 feet</option>
+              </select>
             </div>
           </div>
-          <div class="row">
-            <div class="col-90">
-              <input
-                type="text"
-                value={marstatus}
-                name="marstatus"
-                placeholder="वैवाहिक स्थिति
-                "onChange={handleData}
-              ></input>
-            </div>
-          </div>
+           
           <div class="row">
             <div class="col-90">
               <input
@@ -358,7 +380,29 @@ function Update() {
                 type="text"
                 value={cast}
                 name="cast"
-                placeholder="जाति विवरण"
+                placeholder="धार्मिक विवरण"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={sgotra}
+                name="sgotra"
+                placeholder="स्वयं का गोत्र"
+                onChange={handleData}
+              ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-90">
+              <input
+                type="text"
+                value={mgotra}
+                name="mgotra"
+                placeholder="मामा का गोत्र"
                 onChange={handleData}
               ></input>
             </div>
@@ -370,7 +414,7 @@ function Update() {
                 value={expected}
                 cols="30"
                 rows="6"
-                placeholder="आप किस तरह का लाइफ पार्टनर तलाश रहे हैं
+                placeholder="परिवार के अन्य सदस्यों की जानकारी दर्ज करें। जैसे उनका नाम, आपसे संबंध, इत्यादि
                 "
                 onChange={handleData}
               ></textarea>
