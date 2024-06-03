@@ -1,0 +1,494 @@
+.greet-img{
+  border: 1px solid red;
+  width: 250px;
+  height: 300px;
+   margin: auto;
+}
+
+.line-seperator{
+  width: 100%;
+    background-color: black;
+    height: 1px;
+
+}
+
+.greet-logo{
+  height: 100%;
+  width: 100%;
+}
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.center {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+}
+.wave {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, cyan, #fff);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+
+
+.view-one{
+  height: auto;
+  color: white;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.mobile-num{
+  color: #6739B7;
+    font-size: 50px;
+    font-weight: bold;
+}
+.phonepe-logo{
+  height: 100px;
+  width: 200px;
+}
+.view-three{
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  width: 98%;
+  height: auto;
+  color: rgb(248, 5, 5);
+  background-color: white;
+  font-family: none;
+  font-size: 20px;
+  font-weight: bold;
+   
+}
+
+.can-name{
+  font-weight: bold;
+  color: red;
+  font-size: 30px;
+}
+.can-job{
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.can-office{
+  font-weight: bold;
+  color: red;
+  font-size: 20px;
+}
+.btn-danger{
+  background-color:red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-save{
+  background-color: green;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.namaste{
+  border-radius: 29px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+
+.large-space{
+  height: 400px;
+}
+.p-icon{
+  height: 300px;
+  width: 300px;
+}
+ .profile{
+border: 1px solid #ebe4e4;
+height: auto;
+width: 20%;
+text-align: center;
+ }
+ .btn-primary{
+  background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+ .card-container{
+  text-align: center;
+ }
+ .btn-container{
+  display: flex;
+  justify-content: space-evenly;
+ }
+ .row-spe{
+  display: flex;
+ }
+ #drop-dwn{
+  font-weight: bold;
+    height: 50px;
+ }
+ .name-holder{
+  background-color: #e7dfdf;
+  padding: 3px;
+ }
+ .heading{
+  font-size: 20px;
+  font-weight: bold;
+  width:165px;
+  text-align: justify;
+ }
+
+ .heading-sampark{
+  font-size: 20px;
+  font-weight: bold;
+color: white;
+background-color: #4CAF50;
+  text-align: center;
+  padding: 6px;
+ }
+ .data{
+  font-size: 20px;
+ }
+ .bio-row{
+  display: flex;
+ margin: 25px;
+ }
+ .bio{
+  border: 1px solid #ebe4e4;
+  height: auto;
+  width: 70%;
+  margin: auto;
+ }
+ .currency{
+  font-weight: bold;
+    padding: 14px;
+    background-color: red;
+    color: white;
+ }
+ .bio-center{
+  padding: 20px;
+    border: 1px solid #ebe4e4;
+    height: auto;
+    width: auto;
+    margin: auto;
+    text-align: center;
+ }
+ .loader-bap{
+  padding: 20px;
+    
+    height: auto;
+    width: auto;
+    margin: auto;
+    text-align: center;
+ }
+
+.dash{
+    display: flex;
+    height: auto;
+}
+.bap{
+  background-image:  url("../images/bck2.jpg");
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bap-success{
+  background-color: #6ba12c;
+  color: white;
+  font-size: xx-large;
+}
+.logo{
+  margin: auto;
+  font-weight: bold;
+  font-size: 34px;
+  color: red;
+}
+ 
+
+ .btn-biodata{
+  border: 1px solid white;
+    background-color: white;
+    height: 65px;
+    width: 460px;
+    font-size: 41px;
+    color: rgb(241, 6, 57);
+ }
+ 
+ 
+
+.top-bar-color{
+  height: 5px;
+  width: 100%;
+  background-color: red;
+}
+.space{
+  height: 10px;
+}
+.app-header{
+  box-sizing: border-box;
+    border: 1px solid #ebe4e4;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    align-items: end;
+}
+.btn-login{
+  border: 1px solid #ebe4e4;
+    height: 36px;
+    background-color: white;
+    color: red;
+    width: 100px;
+    font-weight: bold;
+}
+.btn-create{
+  border: 1px solid #ebe4e4;
+    height: 36px;
+    background-color: white;
+    color: red;
+    width: auto;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #d2e769;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover,
+.drop-container.drag-active {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title,
+.drop-container.drag-active .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+input[type=file] {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
+
+.mah{
+  margin: auto;
+  text-align: center;
+  color:red;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 600px) {
+  .large-space {
+    height: 10px; 
+}
+  .btn-create {
+    border: 1px solid white;
+    height: 36px;
+    background-color: red;
+    color: white;
+    width: auto;
+    font-weight: bold;
+    margin: 5px
+}
+  .btn-biodata{
+    border: 1px solid white;
+      background-color: white;
+      height: 50px;
+      width: 320px;
+      font-size: 30px;
+      color: rgb(241, 6, 57);
+   }
+   .logo{
+    font-size: 18px;
+  }
+  .app-header {
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-login{
+  border: 1px solid #ebe4e4;
+    height: 36px;
+    background-color: white;
+    color: red;
+    width: 100px;
+    font-weight: bold;
+}
+.view-three {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  width: 86%;
+  height: auto;
+  color: rgb(248, 5, 5);
+  background-color: white;
+  font-family: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.row {
+  margin: 10px;
+}
+.bio {
+  border: 1px solid #ebe4e4;
+  height: auto;
+  width: 100%;
+  margin: auto;
+}
+
+}
+ 

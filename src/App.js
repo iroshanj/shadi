@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import "./Form.css";
-import Viewone from "./Viewone";
-import Register from "./Register";
-import Dashboard from "./Dashboard";
-import Login from "./Login";
- import Success from "./Success";
-import Profile from "./Profile";
-import Update from "./Update";
+import "./css/App.css";
+import "./css/Form.css";
+import Viewone from "./Pages/Viewone";
+import Register from "./Modules/Register/Register";
+import Dashboard from "./Modules/Dashboard/Dashboard";
+import Login from "./Modules/Login/Login";
+ import Success from "./Pages/Success";
+import Profile from "./Modules/Profile/Profile";
+import Update from "./Modules/Update/Update";
 import PrivateRoute from './PrivateRoute';
-import ProfileUpdateSuccess from "./ProfileUpdateSuccess";
-import Phonepe from "./Phonepe";
+import ProfileUpdateSuccess from "./Pages/ProfileUpdateSuccess";
+import Phonepe from "./Pages/Phonepe";
 
 function App() {
   const isAuthenticated = true; 
